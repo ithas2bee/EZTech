@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EZTech.Models.DVDPlan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxDVDs)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlanName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxDVDs)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DVDPlanID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DVDPlanID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DVDPlanID })
+        </td>
+    </tr>
+}
+
+</table>

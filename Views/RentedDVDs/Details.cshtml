@@ -1,0 +1,51 @@
+﻿@model EZTech.Models.RentedDVD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RentedDVD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DVDPlan.PlanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DVDPlan.PlanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentedDVDID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
